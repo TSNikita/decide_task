@@ -1,4 +1,4 @@
-const union = require('../005-union');
+const union = require("../005-union");
 
 test('Тестирование задачи "005-union"', () => {
     expect(union([1, 1, 3, 2, 5], [5, 3, 7, 7])).toEqual([3, 5]);

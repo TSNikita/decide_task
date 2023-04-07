@@ -22,7 +22,17 @@
  * @returns {boolean}
  */
 function hasCircularDependency(servicesMap) {
-    return false;
+    const keys = Object.keys(servicesMap);
+    if (keys.length === 0) return false;
+
+    const values = Object.values(servicesMap).flat(Infinity);
+
+    for (let key of keys) {
+        if (!values.includes(key)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 module.exports = hasCircularDependency;

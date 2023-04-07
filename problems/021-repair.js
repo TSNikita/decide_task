@@ -16,7 +16,18 @@
  * @returns {number}
  */
 function repair(width, length, height) {
-    return undefined;
+    const square = width * length * height;
+    const window = 48;
+    const division = 16;
+
+    if (square < 16) return 1;
+    if (square >= 160) {
+        const result = (square - window) / division;
+        return result;
+    } else {
+        const result = square / division;
+        return result;
+    }
 }
 
 module.exports = repair;

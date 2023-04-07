@@ -1,4 +1,4 @@
-const getPower = require('../010-power-of-two');
+const getPower = require("../010-power-of-two");
 
 test('Тестирование задачи "010-power-of-two"', () => {
     expect(getPower(1)).toBe(0);

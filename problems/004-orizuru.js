@@ -19,7 +19,27 @@
  * второй элемент – Катей, третий – Сережей
  */
 function computeOrizurus(total) {
-    return undefined;
+    if (total < 3) {
+        return "введите другое число";
+    }
+
+    let men = 0;
+    let girl = 0;
+
+    if (!(total % 6)) {
+        //проверка делится ли число кратно
+        men = Math.round(total / 6);
+        girl = men * 4;
+    } else {
+        if (total / 6 < 1) {
+            // проверка после деления < 1
+            men = 1;
+        } else {
+            men = Math.round(total / 6) - 1 || 1;
+        }
+        girl = total - men * 2;
+    }
+    return [men, girl, men];
 }
 
 module.exports = computeOrizurus;

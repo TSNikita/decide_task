@@ -12,8 +12,17 @@
  * @param {object} object
  * @returns {boolean}
  */
+
 function has(path, object) {
-    return undefined;
+    let result;
+
+    for (let key of path) {
+        result = object != null && hasOwnProperty.call(object, key);
+        if (!result) {
+            return false;
+        }
+    }
+    return result;
 }
 
 module.exports = has;

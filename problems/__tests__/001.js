@@ -1,4 +1,4 @@
-const sum = require('../001-sum');
+const sum = require("../001-sum");
 
 test('Тестирование задачи "001-sum"', () => {
     expect(sum(-100)).toBe(1);

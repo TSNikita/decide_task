@@ -9,7 +9,8 @@
  * @returns {string[]} отсортированный по возрастанию массив временных моментов
  */
 function sortTimestamps(list) {
-    return undefined;
+    list.sort();
+    return list;
 }
 
 module.exports = sortTimestamps;

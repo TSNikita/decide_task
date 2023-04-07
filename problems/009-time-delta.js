@@ -17,7 +17,22 @@
  * @returns {number} разница между x и y в секундах
  */
 function getTimeDelta(x, y) {
-    return undefined;
+    const timeOne = x
+        .split(":")
+        .reverse()
+        .reduce((acum, p, i) => {
+            return acum + p * Math.pow(60, i);
+        }, 0);
+
+    const timeTwo = y
+        .split(":")
+        .reverse()
+        .reduce((acum, p, i) => {
+            return acum + p * Math.pow(60, i);
+        }, 0);
+
+    const timeDifference = timeTwo - timeOne;
+    return timeDifference;
 }
 
 module.exports = getTimeDelta;

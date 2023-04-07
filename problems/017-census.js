@@ -13,7 +13,19 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    return -1;
+    if (list[0].gender === "Female" && list.length === 1) return undefined;
+
+    for (let i = 1; i < list.length; i++) {
+        if (list[i].gender === "Male" && list.length > 1) {
+            let maxIndex = list.reduce(
+                (acum, curr, i) => (list[acum].age > curr.age ? acum : i),
+                0
+            );
+            return maxIndex + 1;
+        } else {
+            return 1;
+        }
+    }
 }
 
 module.exports = census;

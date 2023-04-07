@@ -10,7 +10,8 @@
  * @returns {number[]}
  */
 function flatten(array) {
-    return undefined;
+    const result = array.flat(Infinity);
+    return result;
 }
 
 module.exports = flatten;

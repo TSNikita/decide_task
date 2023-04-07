@@ -16,7 +16,13 @@
  * @returns {(number|undefined)}
  */
 function getWinner(points) {
-    return undefined;
+    const [a, b] = points.reduce(
+        (acum, p) => (
+            p.split("-").forEach((item, i) => (acum[i] += +item)), acum
+        ),
+        [0, 0]
+    );
+    return a === b ? undefined : a < b ? 2 : 1;
 }
 
 module.exports = getWinner;

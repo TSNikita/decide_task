@@ -14,7 +14,21 @@
  * @returns {undefined|number}
  */
 function isFibonacci(value) {
-    return undefined;
+    let a = 0;
+    let b = 1;
+    let count = 1;
+    if (value === 0) return 0;
+    if (value === 1) return 1;
+
+    for (let i = 0; i <= value; i++) {
+        let c = a + b;
+        a = b;
+        b = c;
+        count++;
+        if (b === value) {
+            return count;
+        }
+    }
 }
 
 module.exports = isFibonacci;

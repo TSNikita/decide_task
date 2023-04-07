@@ -14,7 +14,13 @@
  * @returns {string}
  */
 function vacation(date) {
-    return undefined;
+    const dateSplit = date.split(".").reverse();
+
+    const dateInput = new Date(dateSplit);
+
+    let dateDay = dateInput.setDate(dateInput.getDate() + 14);
+    const resultDate = new Date(dateDay);
+    return resultDate.toLocaleDateString();
 }
 
 module.exports = vacation;

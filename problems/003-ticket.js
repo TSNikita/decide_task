@@ -14,7 +14,20 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    const num = number.split("");
+    const num1 = num.slice(0, 3);
+    const num2 = num.slice(3, 6);
+
+    function Total(sumNumber) {
+        const totalSumm = sumNumber.map(Number).reduce((a, b) => a + b);
+        return totalSumm;
+    }
+
+    const totalSum1 = Total(num1);
+    const totalSum2 = Total(num2);
+
+    const result = totalSum1 === totalSum2 ? true : false;
+    return result;
 }
 
 module.exports = checkTicket;
